@@ -372,3 +372,7 @@ tab {
 :root[sessionrestored]:not([chromehidden~="toolbar"]) > body > #browser {
 	margin-top: var(--uc-navbar-transform);
 }
+
+:root[inFullscreen] > body > #browser {
+	margin-top: 0 !important;
+}
