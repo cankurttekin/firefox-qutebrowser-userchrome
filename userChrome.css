@@ -382,6 +382,13 @@ tab {
 	margin-top: var(--uc-navbar-transform);
 }
 
+/* increase pinned tab width */
+.tabbrowser-tab[pinned] {
+  min-width: 58px !important;
+  max-width: 58px !important;
+  width: 58px !important;
+}
+
 /* numbering tabs */
 #tabbrowser-tabs {
   counter-reset: tab-counter;
@@ -391,32 +398,18 @@ tab {
   counter-increment: tab-counter;
 }
 
-.tabbrowser-tab .tab-content::before {
+/* place number before tab title */
+.tabbrowser-tab .tab-label::before {
   content: counter(tab-counter);
-  position: absolute;
-  left: 0px;       
+  margin-right: 6px;              /* space between number and title */
 
-  padding: 0 0px;
-  border-radius: 6px;
+  border-radius: 2px;
+  padding: 2px;
 
-  color: #ffffff;     
+  color: #000;
+  background-color: #FFF481;
 
-  font-weight: 600;
+  font-weight: 800;
   font-size: 14px;
-  line-height: 1.2;
-
-  opacity: 0.9;
-  pointer-events: none; 
-  z-index: 9999;
+  line-height: 1;
 }
-
-/*
-.tabbrowser-tab[pinned] .tab-content::before {
-  display: none !important;
-}
-*/
-
-.tabbrowser-tab:not(:first-child) {
-  border-left: 1px solid #0002 !important;
-}
-
